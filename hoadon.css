@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 100px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .table-responsive {
+    margin-top: 20px; /* Thêm khoảng cách với navbar */
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    padding: 12px; /* Tăng độ rộng của padding */
+    text-align: center; /* Căn giữa nội dung của cột */
+    border: 1px solid #ddd;
+  }
+  
+  .table th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+  }
+  
+  .table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Form Styles */
+  .form-group {
+    margin-bottom: 20px; /* Tăng khoảng cách giữa các thành phần form */
+  }
+  
+  .form-control {
+    width: calc(100% - 24px); /* Điều chỉnh chiều rộng của input */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+  }
+  
+  .btn {
+    background-color: #28a745;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #218838;
+  }
+
+  .total_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px; /* Adjust margin as needed */
+    padding: 10px; /* Add padding for spacing */
+    border: 1px solid #ccc; /* Optional: Add border for visual separation */
+}
+
+.total_container h3 {
+    margin-right: 10px; /* Add spacing between label and price */
+    font-weight: bold; /* Optional: Make label bold */
+}
+
+#total-price {
+    font-size: 1.2em; /* Optional: Adjust font size for total price */
+    color: #007bff; /* Optional: Customize color for total price */
+}
+
+  

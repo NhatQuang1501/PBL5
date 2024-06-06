@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Read JSON File and Display Data</title>
+  <style>
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 10px;
+      flex-basis: 30%;
+    }
+
+    .card p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" class="container"></div>
+
+  <script>
+    const app = document.getElementById("app");
+    app.style.display = "flex"; // Sử dụng Flexbox
+    app.style.flexWrap = "wrap"; // Cards sẽ chuyển xuống dòng khi không đủ chỗ
+    var arrayName = [];
+    var arrayJan = [];
+    fetch("data20240401.json")
+      .then((response) => response.json())
+      .then((data) => {
+        const cards = data.flatMap((carType) =>
+          carType.children.flatMap((child) =>
+            child.children.map((item) => {
+              if (
+                item.brandName !== null &&
+                item.jan !== null &&
+                item.brandName !== "" &&
+                item.jan !== "-"
+              ) {
+                arrayName.push(item.brandName); // Push brandName to arrayName
+                arrayJan.push(item.jan); // Push janData to arrayJan
+                console.log(arrayName);
+                console.log(arrayJan);
+              } else {
+                // If conditions are not met, return null to skip creating the card
+                return null;
+              }
+            })
+          )
+        ).filter((card) => card !== null); // Filter out null cards (where conditions were not met)
+
+        // Append cards to app container
+        cards.forEach((card) => app.appendChild(card));
+
+        // After populating arrays, you can use them for further processing or chart initialization
+        initSheet(arrayName, arrayJan); // Call a function to initialize a data sheet or chart
+      })
+      .catch((error) => {
+        console.error("Error fetching JSON:", error);
+      });
+
+    function initSheet(arrayName, arrayJan) {
+      const dataArray = [
+        ["", ...arrayName], // Header row with empty first cell and brand names
+        ["2015", ...arrayJan], // Data rows for year 2015 with January values
+        // Additional data rows can be added similarly for other years or months
+      ];
+      console.log(dataArray); // Output the prepared data array for verification or further use
+      // Use the prepared dataArray to initialize or update a data sheet or chart
+      // For example:
+      // sheet.setArray(0, 0, dataArray);
+    }
+  </script>
+</body>
+</html>

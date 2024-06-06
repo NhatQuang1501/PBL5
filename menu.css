@@ -1,0 +1,75 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.menu-element__wrapper{
+    width: 100%;    
+}
+
+.menu-element__container{
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-general__element {
+    width: fit-content;
+    padding: 20px 20px;
+    overflow: auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+.menu-element__content {
+    padding: 20px 0;
+    display: flex;
+    object-fit: cover;
+    border-radius: 8px; /* Rounded corners for the image */
+}
+
+.menu-general__image img {
+    width: 250px; /* Allow image to fill its container */
+    height: 200px; /* Set a fixed height for uniformity */
+    object-fit: cover; /* Cover the container while maintaining aspect ratio */
+}
+
+.menu-general__info{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.btn-food__add button{
+    width: -webkit-fill-available;
+    align-content: center;
+    border-radius: 10px;
+    height: 30px;
+    border-width: 0;
+    color: white;
+    background-color: gray;
+}
+
+.btn-food__add button {
+    width: 100%; /* Full width button */
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    background-color: #4caf50; /* Green color for add button */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: white;
+}

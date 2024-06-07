@@ -1,0 +1,310 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>AlFolio - Portfolio Web</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700,800,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,600,700,800,900&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+  <!-- Template css Files -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+
+  <link rel="stylesheet" href="{% static 'css/skins/blue.css' %}" type="text/css">
+
+  <!-- Live Style Switcher -->
+  <link rel="stylesheet" class="alternate-style" title="blue" href="{% static 'css/skins/blue.css' %}" type="text/css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="pink" href="{% static 'css/skins/pink.css' %}" type="text/css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="orange" href="{% static 'css/skins/orange.css' %}" type="text/css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="yellow" href="{% static 'css/skins/yellow.css' %}" type="text/css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="green" href="{% static 'css/skins/green.css' %}" type="text/css" disabled>
+  <link rel="stylesheet" href="{% static 'css/styleSwitcher.css' %}" type="text/css">
+
+</head>
+
+<body class="dark">
+
+  <!-- Pre Loader -->
+  <div class="preloader">
+    <div class="loader">
+    </div>
+  </div>
+  <!-- Pre Loader End -->
+
+  <!-- Main Container -->
+  <div class="main-container">
+
+    <!-- Aside -->
+    <div class="aside">
+      <!-- Nav Toggler Btn -->
+      <div class="nav-toggler">
+        <span></span>
+      </div>
+      <div class="aside-inner">
+        <!-- Logo -->
+        <div class="logo">
+          <a href="#home ">AI</a>
+        </div>
+
+        <!-- Nav -->
+        <ul class="nav">
+          <li><a href="#home" class="active"><i class="fa fa-home"></i> Home</a></li>
+          {% comment %} <li><a href="#about"><i class="fa fa-user"></i> About</a></li> {% endcomment %}
+          {% comment %} <li><a href="#services"><i class="fa fa-list"></i> Services</a></li> {% endcomment %}
+          <li><a href="#portfolio"><i class="fa fa-briefcase"></i> Demo</a></li>
+          <li><a href="#blog"><i class="fa fa-envelope"></i> Paper</a></li>
+          <li><a href="#contact"><i class="fa fa-comments"></i> Contact</a></li>
+        </ul>
+        <!-- Copyright -->
+        <div class="copyright">
+          
+        </div>
+      </div>
+    </div>
+    <!-- Aside End-->
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+      <!-- Home Section -->
+      <section class="home section active" id="home">
+        <div class="container">
+          <div class="intro">
+            <img src="{% static 'images/profile.png' %}" alt="profile" class="shadow-dark">
+            <h1>Xử Lí Dữ Liệu</h1>
+            <p>AI voice detection</p>
+            <div class="social-links">
+              <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+              <a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+              <a href="https://github.com/" target="_blank"><i class="fa fa-github"></i></a>
+              <a href="https://instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a>
+              <a href="https://linkedin.com/in/" target="_blank"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      <section class="portfolio section" id="portfolio">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>Demo</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="portfolio-filter padd-15">
+              <button type="button" class="active" data-filter="web-design">UPLOAD</button>
+            </div>
+          </div>
+          <div class="row">
+            <!-- Portfolio Item -->
+            <div class="portfolio-item padd-15" data-category="web-design">
+              <!-- Input file để tải lên tệp âm thanh -->
+              <input type="file" accept="audio/*" name="audio_file" id="audio-upload" style="display: none;">
+              <div id="selected-file">Chưa có file nào được hiển thị</div>
+              <div class="button-play">
+                  <button class="button-43" id="playButton">Play</button>
+                  <button class="button-43" id="pauseButton">Pause</button>
+              </div>
+          </div>
+            </div>
+       
+        </div>
+      </section>
+      <!-- Portfolio Section End -->
+
+      <!-- Blog Section -->
+      <section class="blog section" id="blog">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>Latest Paper</h2>
+            </div>
+          </div>
+          <div class="row">
+            <!-- Blog Item -->
+            <div class="blog-item padd-15">
+              <div class="blog-item-inner shadow-dark">
+                <div class="blog-img">
+                  <img src="{%static 'images/blog/rawgatst.png'%}" alt="blog">
+                  <div class="blog-date">
+                    23 Aug 2021
+                  </div>
+                </div>
+                <div class="blog-info">
+                  <a href="https://arxiv.org/pdf/2107.12710.pdf" class="blog-title">End-to-End Spectro-Temporal Graph Attention Networks for
+                    Speaker Verification Anti-Spoofing and Speech Deepfake Detection</a>
+                  <p class="blog-description">Mô hình GAT (Graph Attention Network) là một loại mạng nơ-ron sử dụng trong lĩnh vực xử lý dữ liệu dạng đồ thị.mô hình tập trung vào các đặc trưng quan trọng hoặc các mối quan hệ quan trọng trong dữ liệu bằng cách tính toán trọng số cho từng phần tử dựa trên mối quan hệ của nó với các phần tử khác trong dữ liệu.</p>
+                  <p class="blog-tags">Tags : <a href="#">GNN</a> , <a href="#">GATST</a></p>
+
+                </div>
+              </div>
+            </div>
+            <!-- Blog Item End -->
+            <!-- Blog Item -->
+            <div class="blog-item padd-15">
+              <div class="blog-item-inner shadow-dark">
+                <div class="blog-img">
+                  <img src="{%static 'images/blog/assist.png'%}" alt="blog">
+                  <div class="blog-date">
+                    4 Oct 2021
+                  </div>
+                </div>
+                <div class="blog-info">
+                  <a href="https://arxiv.org/pdf/2110.01200v1.pdf" class="blog-title">AASIST: AUDIO ANTI-SPOOFING USING INTEGRATED SP</a>
+                  <p class="blog-description">Được phát triển thêm dựa vào nghiên cứu trước đó mô hình GATST</p>
+                  <p class="blog-tags">Tags : <a href="#">ASSIST</a> , <a href="#">GNN</a>, <a href="#">Rawnet2</a></p>
+
+                </div>
+              </div>
+            </div>
+            <!-- Blog Item End -->
+            <!-- Blog Item -->
+            <div class="blog-item padd-15">
+              <div class="blog-item-inner shadow-dark">
+                <div class="blog-img">
+                  <img src="{%static 'images/blog/survey.png' %}" alt="blog">
+                  <div class="blog-date">
+                    49 Aug 2023
+                  </div>
+                </div>
+                <div class="blog-info">
+                  <a href="https://arxiv.org/pdf/2308.14970.pdf" class="blog-title">Audio Deepfake Detection: A Survey
+                  </a>
+                  <p class="blog-description">Tổng hợp các nghiên cứu, so sánh độ chính xác, đưa ra thông tin tổng quát về deepfake voice</p>
+                  <p class="blog-tags">Tags : <a href="#">All</a> </p>
+
+                </div>
+              </div>
+            </div>
+            <!-- Blog Item End -->
+          </div>
+        </div>
+      </section>
+      <!-- Blog Section End -->
+
+      <!-- Contact Section -->
+      <section class="contact section" id="contact">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>Contact Me</h2>
+            </div>
+          </div>
+          <div class="row">
+            <!-- contact-info-item -->
+            <div class="contact-info-item padd-15">
+              <div class="icon"><i class="fa fa-map-marker"></i></div>
+              <h4>Address</h4>
+              <p>Your Address</p>
+            </div>
+            <!-- contact-info-item Ended -->
+            <!-- contact-info-item -->
+            <div class="contact-info-item padd-15">
+              <div class="icon"><i class="fa fa-phone"></i></div>
+              <h4>Call Us On</h4>
+              <p>Your Number</p>
+            </div>
+            <!-- contact-info-item Ended -->
+            <!-- contact-info-item -->
+            <div class="contact-info-item padd-15">
+              <div class="icon"><i class="fa fa-envelope"></i></div>
+              <h4>Email</h4>
+              <p>youremail@gmail.com</p>
+            </div>
+            <!-- contact-info-item Ended -->
+          </div>
+          <!-- Contact Form -->
+          <div class="row">
+            <form action=”mailto:alsiamworld@gmail.com” method=”POST” enctype=”multipart/form-data” name=”EmailForm”
+              class="contact-form padd-15">
+              <div class="row">
+                <div class="form-item col-6 padd-15">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Name*">
+                  </div>
+                </div>
+                <div class="form-item col-6 padd-15">
+                  <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email*">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-item col-12 padd-15">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Subject*">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-item col-12 padd-15">
+                  <div class="form-group">
+                    <textarea class="form-control" placeholder="Your Message*"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 padd-15">
+                  <button type="submit" class="btn">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Contact Form Ended -->
+        </div>
+      </section>
+      <!-- Contact Section End -->
+
+    </div>
+    <!-- Main Content End -->
+
+  </div>
+  <!-- Main Container End-->
+
+
+
+  <!-- Live Style Switcher -->
+  <div class="style-switcher">
+    <div class="toggle-style-switcher">
+      <i class="fa fa-cog fa-spin"></i>
+    </div>
+    <h4>Style Switcher</h4>
+    <ul>
+      <li><a href="javascript:void(0);" title="blue" style="background-color: #2196f3;"
+          onclick="setActiveStyle('blue')"></a></li>
+      <li><a href="javascript:void(0);" title="pink" style="background-color: #ec1839;"
+          onclick="setActiveStyle('pink')"></a></li>
+      <li><a href="javascript:void(0);" title="orange" style="background-color: #fa5b0f;"
+          onclick="setActiveStyle('orange')"></a></li>
+      <li><a href="javascript:void(0);" title="yellow" style="background-color: #ffb400;"
+          onclick="setActiveStyle('yellow')"></a></li>
+      <li><a href="javascript:void(0);" title="green" style="background-color: #72b626;"
+          onclick="setActiveStyle('green')"></a></li>
+    </ul>
+    <h5>Body Screen</h5>
+    <label>
+      <input type="radio" class="body-skin" name="body-style" value="light" checked="true">
+      Light
+    </label>
+    <label>
+      <input type="radio" class="body-skin" name="body-style" value="dark" >
+      Dark
+    </label>
+  </div>
+  <!-- Live Style Switcher End -->
+
+  <!-- Template Js -->
+  <script src="{% static 'js/script.js' %}"></script>
+
+  <!-- Live Style Switcher JavaScript-->
+  <script src="{% static 'js/styleSwitcher.js' %}"></script>
+
+</body>
+
+</html>
